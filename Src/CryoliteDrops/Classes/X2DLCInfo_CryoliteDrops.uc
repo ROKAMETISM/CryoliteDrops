@@ -23,12 +23,12 @@ var config array<name> LeaderNames;
 
  static event OnPostTemplatesCreated()
  {
-	local LootTableEntry M2Entry, M3Entry;
+	local LootTableEntry FEntry, LEntry;
 
-    M2Entry.Chance = 20;
-    M2Entry.MinCount = 1;
-    M2Entry.MaxCount = 1;
-    M2Entry.TemplateName = 'AdventGremlinM2';
+    FEntry.Chance = Follower_Chance;;
+    FEntry.MinCount = Follower_MinCount;
+    FEntry.MaxCount = Follower_MaxCount;
+    FEntry.TemplateName = 'FrostFollowerCryolite';
     // RollGroup 1 is 100% a random Weapon Upgrade. This turns it into 20% Gremlin, 80% upgrade.
     M2Entry.RollGroup = 1;
 
