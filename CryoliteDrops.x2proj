@@ -9,8 +9,8 @@
     <RootNamespace>CryoliteDrops</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include=".scripts\" />
-    <Folder Include=".scripts\X2ModBuildCommon\" />
+    
+    
     <Folder Include="Config\" />
     <Folder Include="Config\Base\" />
     <Folder Include="Localization\" />
@@ -21,19 +21,19 @@
     <Folder Include="Src\CryoliteDrops\Classes\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include=".scripts\build.ps1" />
-    <Content Include=".scripts\X2ModBuildCommon\build_common.ps1" />
-    <Content Include=".scripts\X2ModBuildCommon\CHANGELOG.md" />
-    <Content Include=".scripts\X2ModBuildCommon\clean.ps1" />
-    <Content Include=".scripts\X2ModBuildCommon\clean_cooker_output.ps1" />
-    <Content Include=".scripts\X2ModBuildCommon\EmptyUMap" />
-    <Content Include=".scripts\X2ModBuildCommon\InvokePowershellTask.cs" />
-    <Content Include=".scripts\X2ModBuildCommon\LICENSE" />
-    <Content Include=".scripts\X2ModBuildCommon\README.md" />
-    <Content Include=".scripts\X2ModBuildCommon\XCOM2.targets" />
-    <Content Include=".gitignore" />
-    <Content Include="replace_text.exe" />
-    <Content Include="RUN_THIS.bat" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <Content Include="ReadMe.txt" />
     <Content Include="ModPreview.jpg" />
     <Content Include="ContentOptions.json" />
@@ -50,8 +50,8 @@
     <Content Include="Src\CryoliteDrops\Classes\ConfigEngine.uc" />
   </ItemGroup>
   <PropertyGroup>
-    <SolutionRoot>$(MSBuildProjectDirectory)\</SolutionRoot>
-    <ScriptsDir>$(SolutionRoot).scripts\</ScriptsDir>
+    <SolutionRoot>$(MSBuildProjectDirectory)\..\</SolutionRoot>
+    <ScriptsDir>$(SolutionRoot).scripts\\</ScriptsDir>
     <BuildCommonRoot>$(ScriptsDir)X2ModBuildCommon\</BuildCommonRoot>
   </PropertyGroup>
   <Import Project="$(BuildCommonRoot)XCOM2.targets" />
