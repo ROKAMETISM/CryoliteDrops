@@ -24,17 +24,14 @@ var config array<name> LeaderNames;
  static event OnPostTemplatesCreated()
  {
 	local LootTableEntry FEntry, LEntry;
+	
 
     FEntry.Chance = Follower_Chance;;
     FEntry.MinCount = Follower_MinCount;
     FEntry.MaxCount = Follower_MaxCount;
     FEntry.TemplateName = 'FrostFollowerCryolite';
-    // RollGroup 1 is 100% a random Weapon Upgrade. This turns it into 20% Gremlin, 80% upgrade.
-    M2Entry.RollGroup = 1;
+    FEntry.RollGroup = 0;
 
-    M3Entry = M2Entry;
-    M3Entry.TemplateName = 'AdventGremlinM3';
 
-    class'X2LootTableManager'.static.AddEntryStatic('ADVENTMidTimedLoot', M2Entry, true);
-    class'X2LootTableManager'.static.AddEntryStatic('ADVENTLateTimedLoot', M3Entry, true);
+
  }
