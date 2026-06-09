@@ -22,6 +22,9 @@
     <Content Include="Config\XComCryolite.ini">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Config\XComGameCore.ini">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="ReadMe.txt" />
     <Content Include="ModPreview.jpg" />
     <Content Include="ContentOptions.json" />
@@ -31,7 +34,6 @@
     <Content Include="Localization\XComGame.int" />
     <Content Include="Localization\CryoliteDrops.int" />
     <Content Include="Src\CryoliteDrops\Classes\X2DLCInfo_CryoliteDrops.uc" />
-    <Content Include="Src\CryoliteDrops\Classes\Help.uc" />
   </ItemGroup>
   <PropertyGroup>
     <SolutionRoot>$(MSBuildProjectDirectory)\..\</SolutionRoot>

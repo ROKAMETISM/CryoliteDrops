@@ -8,30 +8,36 @@
 
 class X2DLCInfo_CryoliteDrops extends X2DownloadableContentInfo config(Cryolite);
 
-var config int Follower_Chance;
-var config int Follower_MinCount;
-var config int Follower_MaxCount;
-
-
-var config int Leader_Chance;
-var config int Leader_MinCount;
-var config int Leader_MaxCount;
-
 var config array<name> FollowerNames;
 var config array<name> LeaderNames;
 
 
- static event OnPostTemplatesCreated()
- {
-	local LootTableEntry FEntry, LEntry;
-	
-
-    FEntry.Chance = Follower_Chance;;
-    FEntry.MinCount = Follower_MinCount;
-    FEntry.MaxCount = Follower_MaxCount;
-    FEntry.TemplateName = 'FrostFollowerCryolite';
-    FEntry.RollGroup = 0;
+static event OnPostTemplatesCreated()
+{
+	AddCryolite(class'X2DLCInfo_CryoliteDrops'.default.FollowerNames, 'FrostFollowerCryolite');
+	AddCryolite(class'X2DLCInfo_CryoliteDrops'.default.LeaderNames, 'FrostLeaderCryolite');
+}
 
 
+ static private function AddCryolite(const array<name> CharTemplateNames, const name CryoliteLootTableName) {
+	local X2CharacterTemplateManager    CharMgr;
+	local X2CharacterTemplate           CharTemplate;
+	local array<X2DataTemplate>			DifficultyVariants;
+	local X2DataTemplate				DifficultyVariant;
+	local X2DataTemplate				DataTemplate;
+	local name CharTemplateName;
+	local LootReference Loot;
+ 	Loot.ForceLevel = 0;
+	Loot.LootTableName = CryoliteLootTableName;
+	CharMgr = class'X2CharacterTemplateManager'.static.GetCharacterTemplateManager();
 
- }
+	foreach CharTemplateNames(CharTemplateName) {
+		CharMgr.FindDataTemplateAllDifficulties(CharTemplateName, DifficultyVariants);
+		foreach DifficultyVariants(DifficultyVariant) {
+			CharTemplate = X2CharacterTemplate(DifficultyVariant);
+			if (CharTemplate == none)
+				continue;
+			CharTemplate.Loot.LootReferences.AddItem(Loot);
+		}
+	}
+}
